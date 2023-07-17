@@ -1,35 +1,28 @@
 import {React, Component} from 'react';
-import { toast } from 'react-toastify';
 export class SearchBar extends Component{
     state = {
-        pictureDesc: ''
+        searchValue: ''
     }
-    handleInput = event => {
+    onHandleInput = event => {
         event.preventDefault();
-        this.setState({pictureDesc: event.currentTarget.value });
-        console.log(event.currentTarget.value);
+        this.setState({searchValue: event.currentTarget.value });
     };
-    handleSubmit = event =>{
+    onHandleSubmit = event =>{
         event.preventDefault();
-        this.props.onSubmit(this.state.pictureDesc);
-        if(this.state.pictureDesc.trim() === ''){
-            toast.error('Введіть дані!')
-            return;
-        }
-        console.log(this.state.pictureDesc);
-        this.setState({pictureDesc : ''});
+       this.props.onSubmit(this.state.searchValue);
       
     };
     render(){
  return(
         <header >
-        <form   onSubmit ={this.handleSubmit}>
+        <form   onSubmit ={this.onHandleSubmit}>
             <button type="submit" ><span >Search</span></button>
             <input
             type="text"
+            autoComplete="off"
+            autoFocus
             placeholder="Search images and photos"
-            value={this.state.pictureDesc}
-            onChange ={this.handleInput}
+            onChange ={this.onHandleInput}
             />
         </form>
         </header>
