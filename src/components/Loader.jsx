@@ -1,16 +1,15 @@
-import { FidgetSpinner } from 'react-loader-spinner';
-
+import {ColorRing } from 'react-loader-spinner';
 export const Loader = () => {
   return (
-    <FidgetSpinner
-      visible={true}
-      height="80"
-      width="80"
-      ariaLabel="dna-loading"
-      wrapperStyle={{}}
-      wrapperClass="dna-wrapper"
-      ballColors={['#ffc609', '#07d407', '#ff0000']}
-      backgroundColor="#150f69"
-    />
+    <ColorRing
+    visible={true}
+    height="80"
+    width="80"
+    ariaLabel="blocks-loading"
+    wrapperStyle={{}}
+    wrapperClass="loader"
+    colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+  />
   );
 };
+

@@ -18,3 +18,4 @@ export const fetchData = async (query, page) => {
   });
   return response.data;
 };
+

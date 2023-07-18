@@ -77,7 +77,7 @@ export class App extends Component{
       <Button onHandleMoreButton={this.onHandleLoadMore}/>  
       )}
       {showModal && (
-      <Modal closeTrigger ={this.toggleModal} image = {selectedImage}/>
+      <Modal closeModalTrigger ={this.toggleModal} image = {selectedImage}/>
       )}
       </div>
    

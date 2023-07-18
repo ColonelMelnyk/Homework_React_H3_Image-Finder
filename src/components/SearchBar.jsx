@@ -1,4 +1,6 @@
 import {React, Component} from 'react';
+import css from './image-finder-styles.module.css';
+import PropTypes from 'prop-types';
 export class SearchBar extends Component{
     state = {
         searchValue: ''
@@ -15,9 +17,10 @@ export class SearchBar extends Component{
     render(){
  return(
         <header >
-        <form   onSubmit ={this.onHandleSubmit}>
-            <button type="submit" ><span >Search</span></button>
+        <form  className ={css.search_form} onSubmit ={this.onHandleSubmit}>
+            <button type="submit" className={css.button} ><span >Search</span></button>
             <input
+            className ={css.search_form_input}
             type="text"
             autoComplete="off"
             autoFocus
@@ -28,4 +31,7 @@ export class SearchBar extends Component{
         </header>
         )
     }
+}
+SearchBar.propTypes ={
+    onSubmit: PropTypes.func.isRequired,
 }
