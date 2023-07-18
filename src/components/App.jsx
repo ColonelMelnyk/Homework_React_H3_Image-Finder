@@ -16,12 +16,7 @@ export class App extends Component{
     selectedImage: '',
     total: 0,
   }
-  componentDidUpdate(_, prevState) {
-    const { search, page } = this.state;
-    if (prevState.search !== search || prevState.page !== page) {
-      this.fetchImages(page, search);
-    }
-  }
+ 
   fetchImages = async (page, search) => {
     this.setState({ isLoading: true });
     try {
@@ -62,7 +57,12 @@ export class App extends Component{
       selectedImage: largeImageURL,
     }));
   };
-
+  componentDidUpdate(_, prevState) {
+    const { search, page } = this.state;
+    if (prevState.search !== search || prevState.page !== page) {
+      this.fetchImages(page, search);
+    }
+  }
   render(){
     const { isLoading, images, showModal, selectedImage, total, page } = this.state;
     const totalPage = Math.ceil(total / 12);

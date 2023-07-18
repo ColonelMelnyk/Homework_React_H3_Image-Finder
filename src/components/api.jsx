@@ -1,5 +1,5 @@
 import axios from 'axios';
-const KEY = '36489495-4c4bba821fe5c27fc94c3b861';
+const KEY = '36691330-f06414af311b17804c7b2f1b7';
 
 const imagesApi = axios.create({
   baseURL: `https://pixabay.com/api/`,
